@@ -993,7 +993,7 @@ public class MatIOTest
         reader.read(f, MatFileReader.MEMORY_MAPPED_FILE );
         array = reader.getMLArray("m1");
         assertEquals("Test if is correct file", array, m1);
-        
+        System.gc();
         //try to delete the file
         assertTrue("Test if file can be deleted", f.delete() );
         
@@ -1008,7 +1008,7 @@ public class MatIOTest
         reader.read(f, MatFileReader.DIRECT_BYTE_BUFFER );
         array = reader.getMLArray("m1");
         assertEquals("Test if is correct file", array, m1);
-        
+        System.gc();
         //try to delete the file
         assertTrue("Test if file can be deleted", f.delete() );
         
